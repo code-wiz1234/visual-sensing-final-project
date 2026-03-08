@@ -1,0 +1,6 @@
+fps_requested,rows,cols,adc_bits,fps_clipped_warning,effective_pixels,frame_time_ms,exposure_time_us,readout_time_us,io_time_us,adc_time_us,idle_time_us,frame_rate_hz_printed,max_frame_rate_hz,system_total_power_attr_W,system_total_power_attr_mW,system_total_power_mW_printed,system_total_power_W_printed,pixel_array_power_mW,readout_circuit_power_mW,pga_power_mW,sar_adc_power_mW,ss_adc_power_mW,mipi_power_mW,pll_power_mW,dynamic_range_dB_first,total_noise_e,adc_quant_noise_ue
+5,480,640,10,0,76800.0,1.0,,,,,,5.0,44.75,0.1344713659228977,134.47136592289772,134.47,0.13447,1.8,131.19,100.79,,28.87,1.54,1.48,63.46,,
+10,480,640,10,0,76800.0,1.0,,,,,,10.0,44.75,0.13608644104443066,136.08644104443064,136.09,0.13609000000000002,1.81,132.8,100.79,,28.94,3.07,1.48,63.46,,
+15,480,640,10,0,76800.0,1.0,,,,,,15.0,44.75,0.13770151616596366,137.70151616596365,137.7,0.1377,1.81,134.41,100.79,,29.01,4.61,1.48,63.46,,
+20,480,640,10,0,76800.0,1.0,,,,,,20.0,44.75,0.13931659128749665,139.31659128749666,139.32,0.13932,1.82,136.02,100.79,,29.09,6.14,1.48,63.46,,
+30,480,640,10,0,76800.0,1.0,,,,,,30.0,44.75,0.14254674153056263,142.54674153056263,142.55,0.14255,1.83,139.23,100.79,,29.23,9.22,1.48,63.46,,

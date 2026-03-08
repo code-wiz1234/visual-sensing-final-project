@@ -1,0 +1,373 @@
+fps_requested,rows,cols,adc_bits,full_output
+10,480,640,8,"MIPI 2457600.0 10.0
+Num of Effective pixels : 76800.0
+========= TIMING MODEL RESULTS =========
+Frame Time :     969.41 µs
+  └─ Exposure Time :     955.30 µs
+  └─ Readout Time :       0.01 µs
+  └─ PGA Time :       0.00 µs
+  └─ I/O Time :       2.45 µs
+  └─ ADC Time :      11.64 µs
+  └─ Idle Time :      94.41 ms
+  └─ Pixel Reset Time :       0.00 µs
+  └─ Pixel Readout Time :       0.01 µs
+  └─ Pixel Floating Diffusion Reset Time :       0.01 µs
+Max Exposure Time :     955.30 µs
+Frame Rate : 10.0 HZ
+Max Frame Rate :     178.91 Hz
+----------------------------------------
+========= POWER CONSUMPTION (W) ========
+System Total Power :     135.36 mW
+----------------------------------------
+Pixel Array Power :       1.81 mW
+  └─ Per-Pixel Power :       0.01 µW
+  └─ Pixel Readout Power :       1.81 mW
+  └─ Pixel Reset Power :       0.03 µW
+  └─ Pixel Source Follower Power :       1.81 mW
+----------------------------------------
+Readout Circuit Power :     132.08 mW
+  └─ PGA Power :     100.79 mW
+  └─ SS ADC Power :      28.83 mW
+  └─ MIPI Power :       2.46 mW
+----------------------------------------
+Phase Locked Loop Power :       1.48 mW
+  └─ PFD Power :       0.80 µW
+  └─ CP Power :      44.99 µW
+  └─ VCO Power :       1.43 mW
+  └─ FD Power :       0.41 µW
+Input Driver Power :       0.00 µW
+  └─ Frame Ctrl Driver :       0.00 µW
+----------------------------------------
+Bus Power (Total) :       0.03 µW
+  └─ Bus Power (Digital):       0.01 µW
+  └─ Bus Power (Analog):       0.02 µW
+--- Detailed Bus Power Components ---
+H-Bus (Frame Rate) :       0.01 µW
+V-Bus (Analog) :       0.02 µW
+========================================
+========= Noise =========
+Dynamic range       
+    0th Color, 0th pixel size  : 51.42 dB
+    0th Color, 1th pixel size  : 51.42 dB
+    0th Color, 2th pixel size  : 51.42 dB
+    0th Color, 3th pixel size  : 51.42 dB
+    0th Color, 4th pixel size  : 51.42 dB
+    1th Color, 0th pixel size  : 51.42 dB
+    1th Color, 1th pixel size  : 51.42 dB
+    1th Color, 2th pixel size  : 51.42 dB
+    1th Color, 3th pixel size  : 51.42 dB
+    1th Color, 4th pixel size  : 51.42 dB
+    2th Color, 0th pixel size  : 51.42 dB
+    2th Color, 1th pixel size  : 51.42 dB
+    2th Color, 2th pixel size  : 51.42 dB
+    2th Color, 3th pixel size  : 51.42 dB
+    2th Color, 4th pixel size  : 51.42 dB
+    3th Color, 0th pixel size  : 51.42 dB
+    3th Color, 1th pixel size  : 51.42 dB
+    3th Color, 2th pixel size  : 51.42 dB
+    3th Color, 3th pixel size  : 51.42 dB
+    3th Color, 4th pixel size  : 51.42 dB
+Signal Noise Ratio 
+    0th Color, 0th pixel size  : 43.81 dB
+    0th Color, 1th pixel size  : 43.81 dB
+    0th Color, 2th pixel size  : 43.81 dB
+    0th Color, 3th pixel size  : 43.81 dB
+    0th Color, 4th pixel size  : 43.81 dB
+    1th Color, 0th pixel size  : 43.81 dB
+    1th Color, 1th pixel size  : 43.81 dB
+    1th Color, 2th pixel size  : 43.81 dB
+    1th Color, 3th pixel size  : 43.81 dB
+    1th Color, 4th pixel size  : 43.81 dB
+    2th Color, 0th pixel size  : 43.81 dB
+    2th Color, 1th pixel size  : 43.81 dB
+    2th Color, 2th pixel size  : 43.81 dB
+    2th Color, 3th pixel size  : 43.81 dB
+    2th Color, 4th pixel size  : 43.81 dB
+    3th Color, 0th pixel size  : 43.81 dB
+    3th Color, 1th pixel size  : 43.81 dB
+    3th Color, 2th pixel size  : 43.81 dB
+    3th Color, 3th pixel size  : 43.81 dB
+    3th Color, 4th pixel size  : 43.81 dB
+    0th Color, 0th pixel size  : 5735.01872659176 e-
+    0th Color, 1th pixel size  : 5735.01872659176 e-
+    0th Color, 2th pixel size  : 5735.01872659176 e-
+    0th Color, 3th pixel size  : 5735.01872659176 e-
+    0th Color, 4th pixel size  : 5735.01872659176 e-
+    1th Color, 0th pixel size  : 5735.01872659176 e-
+    1th Color, 1th pixel size  : 5735.01872659176 e-
+    1th Color, 2th pixel size  : 5735.01872659176 e-
+    1th Color, 3th pixel size  : 5735.01872659176 e-
+    1th Color, 4th pixel size  : 5735.01872659176 e-
+    2th Color, 0th pixel size  : 5735.01872659176 e-
+    2th Color, 1th pixel size  : 5735.01872659176 e-
+    2th Color, 2th pixel size  : 5735.01872659176 e-
+    2th Color, 3th pixel size  : 5735.01872659176 e-
+    2th Color, 4th pixel size  : 5735.01872659176 e-
+    3th Color, 0th pixel size  : 5735.01872659176 e-
+    3th Color, 1th pixel size  : 5735.01872659176 e-
+    3th Color, 2th pixel size  : 5735.01872659176 e-
+    3th Color, 3th pixel size  : 5735.01872659176 e-
+    3th Color, 4th pixel size  : 5735.01872659176 e-
+
+Totoal Noise      : 158.39 e-
+  1. Total Shot Noise     : 157.57 e-
+    ├─ Photo Shot Noise       : 155.83 e-
+    ├─ SF Shot Noise          : 1.56 e-
+    └─ Dark Current Shot Noise: 23.29 e-
+  2. Total Read Noise     : 15.41 e-
+    ─ Total Thermal Noise     : 0.52 µe-
+       ├─ SF Thermal Noise    : 0.15 µe-
+       ├─ TG Thermal Noise    : 0.04 µe-
+       └─ ADC Thermal Noise   : 0.50 µe-
+    ─ ADC Quantization Noise  : 15405.91 µe-
+  3. Transfer(CTI) Noise  : 4.93 e-
+Total Power (sensor.system_total_power): 0.13536338085486985
+"
+10,480,640,10,"MIPI 3072000.0 10.0
+Num of Effective pixels : 76800.0
+========= TIMING MODEL RESULTS =========
+Frame Time :       1.00 ms
+  └─ Exposure Time :     955.30 µs
+  └─ Readout Time :       0.01 µs
+  └─ PGA Time :       0.00 µs
+  └─ I/O Time :       3.00 µs
+  └─ ADC Time :      46.55 µs
+  └─ Idle Time :      77.65 ms
+  └─ Pixel Reset Time :       0.00 µs
+  └─ Pixel Readout Time :       0.01 µs
+  └─ Pixel Floating Diffusion Reset Time :       0.01 µs
+Max Exposure Time :     955.30 µs
+Frame Rate : 10.0 HZ
+Max Frame Rate :      44.75 Hz
+----------------------------------------
+========= POWER CONSUMPTION (W) ========
+System Total Power :     136.09 mW
+----------------------------------------
+Pixel Array Power :       1.81 mW
+  └─ Per-Pixel Power :       0.01 µW
+  └─ Pixel Readout Power :       1.81 mW
+  └─ Pixel Reset Power :       0.03 µW
+  └─ Pixel Source Follower Power :       1.81 mW
+----------------------------------------
+Readout Circuit Power :     132.80 mW
+  └─ PGA Power :     100.79 mW
+  └─ SS ADC Power :      28.94 mW
+  └─ MIPI Power :       3.07 mW
+----------------------------------------
+Phase Locked Loop Power :       1.48 mW
+  └─ PFD Power :       0.80 µW
+  └─ CP Power :      44.99 µW
+  └─ VCO Power :       1.43 mW
+  └─ FD Power :       0.41 µW
+Input Driver Power :       0.00 µW
+  └─ Frame Ctrl Driver :       0.00 µW
+----------------------------------------
+Bus Power (Total) :       0.03 µW
+  └─ Bus Power (Digital):       0.01 µW
+  └─ Bus Power (Analog):       0.02 µW
+--- Detailed Bus Power Components ---
+H-Bus (Frame Rate) :       0.01 µW
+V-Bus (Analog) :       0.02 µW
+========================================
+========= Noise =========
+Dynamic range       
+    0th Color, 0th pixel size  : 63.46 dB
+    0th Color, 1th pixel size  : 63.46 dB
+    0th Color, 2th pixel size  : 63.46 dB
+    0th Color, 3th pixel size  : 63.46 dB
+    0th Color, 4th pixel size  : 63.46 dB
+    1th Color, 0th pixel size  : 63.46 dB
+    1th Color, 1th pixel size  : 63.46 dB
+    1th Color, 2th pixel size  : 63.46 dB
+    1th Color, 3th pixel size  : 63.46 dB
+    1th Color, 4th pixel size  : 63.46 dB
+    2th Color, 0th pixel size  : 63.46 dB
+    2th Color, 1th pixel size  : 63.46 dB
+    2th Color, 2th pixel size  : 63.46 dB
+    2th Color, 3th pixel size  : 63.46 dB
+    2th Color, 4th pixel size  : 63.46 dB
+    3th Color, 0th pixel size  : 63.46 dB
+    3th Color, 1th pixel size  : 63.46 dB
+    3th Color, 2th pixel size  : 63.46 dB
+    3th Color, 3th pixel size  : 63.46 dB
+    3th Color, 4th pixel size  : 63.46 dB
+Signal Noise Ratio 
+    0th Color, 0th pixel size  : 43.85 dB
+    0th Color, 1th pixel size  : 43.85 dB
+    0th Color, 2th pixel size  : 43.85 dB
+    0th Color, 3th pixel size  : 43.85 dB
+    0th Color, 4th pixel size  : 43.85 dB
+    1th Color, 0th pixel size  : 43.85 dB
+    1th Color, 1th pixel size  : 43.85 dB
+    1th Color, 2th pixel size  : 43.85 dB
+    1th Color, 3th pixel size  : 43.85 dB
+    1th Color, 4th pixel size  : 43.85 dB
+    2th Color, 0th pixel size  : 43.85 dB
+    2th Color, 1th pixel size  : 43.85 dB
+    2th Color, 2th pixel size  : 43.85 dB
+    2th Color, 3th pixel size  : 43.85 dB
+    2th Color, 4th pixel size  : 43.85 dB
+    3th Color, 0th pixel size  : 43.85 dB
+    3th Color, 1th pixel size  : 43.85 dB
+    3th Color, 2th pixel size  : 43.85 dB
+    3th Color, 3th pixel size  : 43.85 dB
+    3th Color, 4th pixel size  : 43.85 dB
+    0th Color, 0th pixel size  : 5735.01872659176 e-
+    0th Color, 1th pixel size  : 5735.01872659176 e-
+    0th Color, 2th pixel size  : 5735.01872659176 e-
+    0th Color, 3th pixel size  : 5735.01872659176 e-
+    0th Color, 4th pixel size  : 5735.01872659176 e-
+    1th Color, 0th pixel size  : 5735.01872659176 e-
+    1th Color, 1th pixel size  : 5735.01872659176 e-
+    1th Color, 2th pixel size  : 5735.01872659176 e-
+    1th Color, 3th pixel size  : 5735.01872659176 e-
+    1th Color, 4th pixel size  : 5735.01872659176 e-
+    2th Color, 0th pixel size  : 5735.01872659176 e-
+    2th Color, 1th pixel size  : 5735.01872659176 e-
+    2th Color, 2th pixel size  : 5735.01872659176 e-
+    2th Color, 3th pixel size  : 5735.01872659176 e-
+    2th Color, 4th pixel size  : 5735.01872659176 e-
+    3th Color, 0th pixel size  : 5735.01872659176 e-
+    3th Color, 1th pixel size  : 5735.01872659176 e-
+    3th Color, 2th pixel size  : 5735.01872659176 e-
+    3th Color, 3th pixel size  : 5735.01872659176 e-
+    3th Color, 4th pixel size  : 5735.01872659176 e-
+
+Totoal Noise      : 157.69 e-
+  1. Total Shot Noise     : 157.57 e-
+    ├─ Photo Shot Noise       : 155.83 e-
+    ├─ SF Shot Noise          : 1.56 e-
+    └─ Dark Current Shot Noise: 23.29 e-
+  2. Total Read Noise     : 3.85 e-
+    ─ Total Thermal Noise     : 0.52 µe-
+       ├─ SF Thermal Noise    : 0.15 µe-
+       ├─ TG Thermal Noise    : 0.04 µe-
+       └─ ADC Thermal Noise   : 0.50 µe-
+    ─ ADC Quantization Noise  : 3851.48 µe-
+  3. Transfer(CTI) Noise  : 4.93 e-
+Total Power (sensor.system_total_power): 0.13608644104443066
+"
+10,480,640,12,"MIPI 3686400.0 10.0
+Num of Effective pixels : 76800.0
+========= TIMING MODEL RESULTS =========
+Frame Time :       1.14 ms
+  └─ Exposure Time :     955.30 µs
+  └─ Readout Time :       0.01 µs
+  └─ PGA Time :       0.00 µs
+  └─ I/O Time :       3.00 µs
+  └─ ADC Time :     186.19 µs
+  └─ Idle Time :      10.63 ms
+  └─ Pixel Reset Time :       0.00 µs
+  └─ Pixel Readout Time :       0.01 µs
+  └─ Pixel Floating Diffusion Reset Time :       0.01 µs
+Max Exposure Time :     955.30 µs
+Frame Rate : 10.0 HZ
+Max Frame Rate :      11.19 Hz
+----------------------------------------
+========= POWER CONSUMPTION (W) ========
+System Total Power :     137.14 mW
+----------------------------------------
+Pixel Array Power :       1.81 mW
+  └─ Per-Pixel Power :       0.01 µW
+  └─ Pixel Readout Power :       1.81 mW
+  └─ Pixel Reset Power :       0.03 µW
+  └─ Pixel Source Follower Power :       1.81 mW
+----------------------------------------
+Readout Circuit Power :     133.85 mW
+  └─ PGA Power :     100.79 mW
+  └─ SS ADC Power :      29.38 mW
+  └─ MIPI Power :       3.69 mW
+----------------------------------------
+Phase Locked Loop Power :       1.48 mW
+  └─ PFD Power :       0.80 µW
+  └─ CP Power :      44.99 µW
+  └─ VCO Power :       1.43 mW
+  └─ FD Power :       0.41 µW
+Input Driver Power :       0.00 µW
+  └─ Frame Ctrl Driver :       0.00 µW
+----------------------------------------
+Bus Power (Total) :       0.03 µW
+  └─ Bus Power (Digital):       0.01 µW
+  └─ Bus Power (Analog):       0.02 µW
+--- Detailed Bus Power Components ---
+H-Bus (Frame Rate) :       0.01 µW
+V-Bus (Analog) :       0.02 µW
+========================================
+========= Noise =========
+Dynamic range       
+    0th Color, 0th pixel size  : 75.50 dB
+    0th Color, 1th pixel size  : 75.50 dB
+    0th Color, 2th pixel size  : 75.50 dB
+    0th Color, 3th pixel size  : 75.50 dB
+    0th Color, 4th pixel size  : 75.50 dB
+    1th Color, 0th pixel size  : 75.50 dB
+    1th Color, 1th pixel size  : 75.50 dB
+    1th Color, 2th pixel size  : 75.50 dB
+    1th Color, 3th pixel size  : 75.50 dB
+    1th Color, 4th pixel size  : 75.50 dB
+    2th Color, 0th pixel size  : 75.50 dB
+    2th Color, 1th pixel size  : 75.50 dB
+    2th Color, 2th pixel size  : 75.50 dB
+    2th Color, 3th pixel size  : 75.50 dB
+    2th Color, 4th pixel size  : 75.50 dB
+    3th Color, 0th pixel size  : 75.50 dB
+    3th Color, 1th pixel size  : 75.50 dB
+    3th Color, 2th pixel size  : 75.50 dB
+    3th Color, 3th pixel size  : 75.50 dB
+    3th Color, 4th pixel size  : 75.50 dB
+Signal Noise Ratio 
+    0th Color, 0th pixel size  : 43.85 dB
+    0th Color, 1th pixel size  : 43.85 dB
+    0th Color, 2th pixel size  : 43.85 dB
+    0th Color, 3th pixel size  : 43.85 dB
+    0th Color, 4th pixel size  : 43.85 dB
+    1th Color, 0th pixel size  : 43.85 dB
+    1th Color, 1th pixel size  : 43.85 dB
+    1th Color, 2th pixel size  : 43.85 dB
+    1th Color, 3th pixel size  : 43.85 dB
+    1th Color, 4th pixel size  : 43.85 dB
+    2th Color, 0th pixel size  : 43.85 dB
+    2th Color, 1th pixel size  : 43.85 dB
+    2th Color, 2th pixel size  : 43.85 dB
+    2th Color, 3th pixel size  : 43.85 dB
+    2th Color, 4th pixel size  : 43.85 dB
+    3th Color, 0th pixel size  : 43.85 dB
+    3th Color, 1th pixel size  : 43.85 dB
+    3th Color, 2th pixel size  : 43.85 dB
+    3th Color, 3th pixel size  : 43.85 dB
+    3th Color, 4th pixel size  : 43.85 dB
+    0th Color, 0th pixel size  : 5735.01872659176 e-
+    0th Color, 1th pixel size  : 5735.01872659176 e-
+    0th Color, 2th pixel size  : 5735.01872659176 e-
+    0th Color, 3th pixel size  : 5735.01872659176 e-
+    0th Color, 4th pixel size  : 5735.01872659176 e-
+    1th Color, 0th pixel size  : 5735.01872659176 e-
+    1th Color, 1th pixel size  : 5735.01872659176 e-
+    1th Color, 2th pixel size  : 5735.01872659176 e-
+    1th Color, 3th pixel size  : 5735.01872659176 e-
+    1th Color, 4th pixel size  : 5735.01872659176 e-
+    2th Color, 0th pixel size  : 5735.01872659176 e-
+    2th Color, 1th pixel size  : 5735.01872659176 e-
+    2th Color, 2th pixel size  : 5735.01872659176 e-
+    2th Color, 3th pixel size  : 5735.01872659176 e-
+    2th Color, 4th pixel size  : 5735.01872659176 e-
+    3th Color, 0th pixel size  : 5735.01872659176 e-
+    3th Color, 1th pixel size  : 5735.01872659176 e-
+    3th Color, 2th pixel size  : 5735.01872659176 e-
+    3th Color, 3th pixel size  : 5735.01872659176 e-
+    3th Color, 4th pixel size  : 5735.01872659176 e-
+
+Totoal Noise      : 157.65 e-
+  1. Total Shot Noise     : 157.57 e-
+    ├─ Photo Shot Noise       : 155.83 e-
+    ├─ SF Shot Noise          : 1.56 e-
+    └─ Dark Current Shot Noise: 23.29 e-
+  2. Total Read Noise     : 0.96 e-
+    ─ Total Thermal Noise     : 0.52 µe-
+       ├─ SF Thermal Noise    : 0.15 µe-
+       ├─ TG Thermal Noise    : 0.04 µe-
+       └─ ADC Thermal Noise   : 0.50 µe-
+    ─ ADC Quantization Noise  : 962.87 µe-
+  3. Transfer(CTI) Noise  : 4.93 e-
+Total Power (sensor.system_total_power): 0.13713548180267401
+"
