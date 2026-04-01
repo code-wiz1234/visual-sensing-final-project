@@ -168,7 +168,7 @@ def get_cis_worst_case_power_mw() -> float | None:
     cis_csv = os.path.abspath(os.path.join(
         os.path.dirname(os.path.abspath(__file__)),
         '..', 'Harshithas-work',
-        'ModuCIS.-CIS-modeling-main', 'ModuCIS.-CIS-modeling-main',
+        'Spring-2026-ModuCIS-modeling-main', 'ModuCIS.-CIS-modeling-main', 'ModuCIS.-CIS-modeling-main',
         'CIS_Model', 'Use_cases', 'sweeps_results_final_cis_model',
         'cis_all_scenes_summary.csv'
     ))
@@ -176,7 +176,7 @@ def get_cis_worst_case_power_mw() -> float | None:
         return None
     import pandas as _pd
     cis_df = _pd.read_csv(cis_csv)
-    # Cap at 500 — Harshita's CSV only covers up to 500 px/s regardless of scene model range - currently
+    # Cap at 500 — Harshita's CSV only covers up to 500 px/s regardless of scene model range
     worst_vel = min(max(velocities), 500)
     row = cis_df[(cis_df['velocity_px_s'] == worst_vel) &
                  (cis_df['object_size_px'] == TEMPORAL_OBJ_SIZE)]
@@ -308,7 +308,7 @@ if __name__ == '__main__':
     print(f'P_static = {P_STATIC_MW:.2f} mW | E_per_event = {E_PER_EVENT_NJ:.3f} nJ | '
           f'Refractory cap = {REFRACTORY_CAP/1e6:.2f}M ev/s')
     # print(df[(df['threshold_name'] == 'med_threshold') &
-    #          (df['background'] == 'low_texture')].to_string(index=False))
+    # (df['background'] == 'low_texture')].to_string(index=False))
 
     plot_power_vs_velocity(df, OUT_DIR)
     plot_power_vs_background(df, OUT_DIR)
