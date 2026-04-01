@@ -1,0 +1,3 @@
+background,adc_bits,worst_case_fps,power_mW,latency_ms,dynamic_range_dB,total_noise_e
+low_texture,8,800.0,332.5936,1.92,51.42,
+high_texture,9,800.0,359.9477,1.94,57.44,

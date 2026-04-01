@@ -1,0 +1,7 @@
+time_s,velocity_px_s,background,power_mW,latency_ms,worst_case_fps,note
+0,50,low_texture,332.5936,1.92,800.0,CIS power constant — animation scene
+1,500,low_texture,332.5936,1.92,800.0,CIS power constant — animation scene
+2,2000,low_texture,332.5936,1.92,800.0,CIS power constant — animation scene
+0,50,high_texture,359.9477,1.94,800.0,CIS power constant — animation scene
+1,500,high_texture,359.9477,1.94,800.0,CIS power constant — animation scene
+2,2000,high_texture,359.9477,1.94,800.0,CIS power constant — animation scene
