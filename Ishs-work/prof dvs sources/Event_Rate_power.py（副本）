@@ -1,0 +1,196 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.widgets import Slider
+import math
+
+# --- User Specified Constants (Fixed) ---
+C3, Cgate = 32e-15, 15e-15
+num_bits = 15
+
+# --- Initial Parameters ---
+init_N_dim = 128
+init_theta = 0.025       
+init_Vdd = 3.3           
+init_Cbus = 2.0          
+init_Iafe = 50.0         
+init_Iother = 1.0        
+init_Carb = 20.0         
+init_Ileak1 = 1.0        
+init_Ileak2 = 1.0        
+init_Tref = 0.1          # 0.1us
+init_C1 = 467.0          # fF
+init_C2 = 24.0           # fF
+
+# --- Initial Event Scenarios ---
+init_rate_std = 5.0      
+init_rate_fp = 1.0       
+init_rate_fn = 0.5       
+
+# --- Setup Figure ---
+fig = plt.figure(figsize=(14, 12)) 
+ax_pow = plt.subplot(1, 2, 1)
+ax_pie = plt.subplot(1, 2, 2)
+plt.subplots_adjust(bottom=0.52, wspace=0.3) 
+
+def update(val):
+    # 1. Retrieve Physics Parameters
+    vdd = s_vdd.val
+    theta = s_theta.val
+    cbus = s_cbus.val * 1e-12
+    carb = s_carb.val * 1e-15
+    iafe = s_iafe.val * 1e-9
+    iother = s_iother.val * 1e-3
+    ileak_tot = (s_ileak1.val + s_ileak2.val) * 1e-12
+    n_dim = int(s_ndim.val)
+    t_ref = s_tref.val * 1e-6 
+    
+    c1 = s_c1.val * 1e-15
+    c2 = s_c2.val * 1e-15
+    
+    # 2. Refractory Limit Calculation
+    # Max rate per pixel = 1/T_ref
+    if t_ref <= 1e-9: 
+        max_rate_per_px = 1e12 
+        limit_label = "Uncapped"
+        max_rate_array = 1e12 # Effectively infinite
+    else:
+        max_rate_per_px = 1.0 / t_ref
+        max_rate_array = (n_dim**2) * max_rate_per_px # Array Total Max
+        limit_label = f"{max_rate_per_px/1e6:.1f} MHz/px"
+
+    # 3. Retrieve Event Rates 
+    raw_r_std = s_std.val * 1e6
+    r_fp  = s_fp.val * 1e6
+    r_fn  = s_fn.val * 1e6
+    
+    # CLAMP LOGIC:
+    if raw_r_std > max_rate_array:
+        r_std = max_rate_array
+        is_limited = True
+    else:
+        r_std = raw_r_std
+        is_limited = False
+    
+    if r_fn > r_std: r_fn = r_std
+
+    # 4. Calculate Energy Per Event
+    e_afe = (theta**2) * c2 * (1 + c2/c1)
+    
+    c_sw_dig = (Cgate + C3) + (2 * math.log2(n_dim) * carb) + (0.5 * num_bits * cbus)
+    e_dig = (vdd**2) * c_sw_dig
+    e_total_J = e_afe + e_dig 
+    
+    # 5. Calculate Power (Watts -> mW)
+    i_static_total = (n_dim**2 * (iafe + ileak_tot)) + iother
+    p_static = (vdd * i_static_total) * 1000
+    
+    p_dyn_std = (r_std * e_total_J) * 1000
+    
+    r_proc_valid = r_std - r_fn
+    p_dyn_valid = (r_proc_valid * e_total_J) * 1000
+    p_dyn_fp    = (r_fp * e_total_J) * 1000   
+    p_dyn_fn    = (r_fn * e_total_J) * 1000   
+    
+    p_total_std = p_static + p_dyn_std
+    p_total_act = p_static + p_dyn_valid + p_dyn_fp
+    
+    # 6. Plotting - Bar Chart
+    ax_pow.cla()
+    ax_pow.bar(['Standard'], [p_static], color='#95a5a6', label='Static')
+    ax_pow.bar(['Standard'], [p_dyn_std], bottom=p_static, color='#3498db', label='Ideal Dyn')
+    
+    ax_pow.bar(['Actual'], [p_static], color='#95a5a6')
+    ax_pow.bar(['Actual'], [p_dyn_valid], bottom=p_static, color='#3498db')
+    ax_pow.bar(['Actual'], [p_dyn_fp], bottom=p_static + p_dyn_valid, 
+               color='#e74c3c', hatch='//', label='False Pos (Waste)')
+    
+    ax_pow.bar(['Actual'], [p_dyn_fn], bottom=p_total_act, 
+               color='none', edgecolor='#2ecc71', hatch='..', linewidth=1.5, linestyle='--', label='False Neg (Saved)')
+
+    ax_pow.set_ylabel("Power (mW)")
+    
+    limit_txt = f"\n(LIMITED by T_ref)" if is_limited else ""
+    title_col = 'red' if is_limited else 'black'
+    ax_pow.set_title(f"Total Power: {p_total_act:.2f} mW{limit_txt}", color=title_col, weight='bold')
+    ax_pow.legend(loc='upper left', fontsize='small')
+    
+    # 7. Plotting - Pie Breakdown
+    ax_pie.cla()
+    labels = ['Static', 'Dyn (Valid)', 'Dyn (False Pos)', 'Dyn (Saved/FN)']
+    sizes = [p_static, p_dyn_valid, p_dyn_fp, p_dyn_fn]
+    colors = ['#95a5a6', '#3498db', '#e74c3c', '#2ecc71']
+    explode = (0, 0, 0.1, 0.1)
+    
+    ax_pie.pie(sizes, labels=labels, colors=colors, explode=explode, autopct='%1.1f%%', startangle=90)
+    
+    # Show Max Array Rate
+    if t_ref > 1e-9:
+        max_rate_str = f"{max_rate_array/1e6:.1f} Meps"
+    else:
+        max_rate_str = "Infinite"
+
+    gain = c1/c2
+    ax_pie.set_title(f"Max Array Rate: {max_rate_str}\n(Limit: {limit_label})")
+
+    # 8. Text Stats
+    delta = p_total_act - p_total_std
+    txt = (f"False Pos Power: {p_dyn_fp:.2f} mW\n"
+           f"False Neg Savings: {p_dyn_fn:.2f} mW\n"
+           f"Net Difference: {delta:+.2f} mW")
+    
+    ax_pow.text(0.5, 0.5, txt, transform=ax_pow.transAxes, ha='center',
+                bbox=dict(facecolor='white', alpha=0.9, edgecolor='gray'))
+    
+    fig.canvas.draw_idle()
+
+# --- Sliders ---
+ax_color = 'lightcyan'
+
+# Group 1: Physics (Circuit)
+ax_c1    = plt.axes([0.1, 0.44, 0.35, 0.02], facecolor='#e1f5fe')
+ax_c2    = plt.axes([0.1, 0.40, 0.35, 0.02], facecolor='#e1f5fe')
+ax_vdd   = plt.axes([0.1, 0.36, 0.35, 0.02], facecolor=ax_color)
+ax_theta = plt.axes([0.1, 0.32, 0.35, 0.02], facecolor=ax_color)
+ax_cbus  = plt.axes([0.1, 0.28, 0.35, 0.02], facecolor=ax_color)
+ax_carb  = plt.axes([0.1, 0.24, 0.35, 0.02], facecolor=ax_color)
+ax_ndim  = plt.axes([0.1, 0.20, 0.35, 0.02], facecolor=ax_color)
+
+# Group 2: Biases & Leakage & Refractory
+ax_iafe   = plt.axes([0.55, 0.44, 0.35, 0.02], facecolor=ax_color)
+ax_iother = plt.axes([0.55, 0.40, 0.35, 0.02], facecolor=ax_color)
+ax_ileak1 = plt.axes([0.55, 0.36, 0.35, 0.02], facecolor=ax_color)
+ax_ileak2 = plt.axes([0.55, 0.32, 0.35, 0.02], facecolor=ax_color)
+ax_tref   = plt.axes([0.55, 0.28, 0.35, 0.02], facecolor='#ffcc80')
+
+# Group 3: Event Rates (System Input)
+ax_std = plt.axes([0.15, 0.10, 0.70, 0.02], facecolor='#fff59d')
+ax_fp  = plt.axes([0.15, 0.07, 0.70, 0.02], facecolor='#ffcdd2')
+ax_fn  = plt.axes([0.15, 0.04, 0.70, 0.02], facecolor='#c8e6c9')
+
+# Define Sliders
+s_c1    = Slider(ax_c1, 'C1 (fF)', 100.0, 1000.0, valinit=init_C1)
+s_c2    = Slider(ax_c2, 'C2 (fF)', 5.0, 100.0, valinit=init_C2)
+s_vdd   = Slider(ax_vdd, 'Vdd (V)', 1.0, 5.0, valinit=init_Vdd)
+s_theta = Slider(ax_theta, 'Theta (%)', 0.01, 0.20, valinit=init_theta)
+s_cbus  = Slider(ax_cbus, 'C_bus (pF)', 0.1, 10.0, valinit=init_Cbus)
+s_carb  = Slider(ax_carb, 'C_arb (fF)', 1.0, 100.0, valinit=init_Carb)
+s_ndim  = Slider(ax_ndim, 'N Array', 32, 512, valinit=init_N_dim,valstep=32)
+
+s_iafe   = Slider(ax_iafe, 'I_afe (nA)', 10, 200, valinit=init_Iafe)
+s_iother = Slider(ax_iother, 'I_other (mA)', 0.1, 10.0, valinit=init_Iother)
+s_ileak1 = Slider(ax_ileak1, 'I_leak1 (pA)', 0.1, 100.0, valinit=init_Ileak1)
+s_ileak2 = Slider(ax_ileak2, 'I_leak2 (pA)', 0.1, 100.0, valinit=init_Ileak2)
+s_tref   = Slider(ax_tref, 'Refractory (us)', 0.0, 1.0, valinit=init_Tref)
+
+# UPDATED: Max Rate 100 Meps
+s_std = Slider(ax_std, 'Standard Rate (Meps)', 0.1, 100.0, valinit=init_rate_std)
+s_fp  = Slider(ax_fp, 'False Pos (Meps)', 0.0, 20.0, valinit=init_rate_fp)
+s_fn  = Slider(ax_fn, 'False Neg (Meps)', 0.0, 20.0, valinit=init_rate_fn)
+
+# Update Loop
+sliders = [s_c1, s_c2, s_vdd, s_theta, s_cbus, s_carb, s_ndim, s_iafe, s_iother, s_ileak1, s_ileak2, s_tref, s_std, s_fp, s_fn]
+for s in sliders:
+    s.on_changed(update)
+
+update(None)
+plt.show()

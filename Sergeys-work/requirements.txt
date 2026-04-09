@@ -1,0 +1,9 @@
+numpy>=1.24
+scipy>=1.10
+opencv-python>=4.8
+pandas>=2.0
+matplotlib>=3.7
+filterpy>=1.4.5
+motmetrics>=1.4.0
+# v2e is optional; if unavailable, v2e_adapter falls back to the frame-diff emulator.
+# Install separately with:  pip install v2e

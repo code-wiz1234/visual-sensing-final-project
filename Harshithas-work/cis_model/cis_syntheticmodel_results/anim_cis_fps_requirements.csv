@@ -1,0 +1,4 @@
+object_size_px,velocity_px_s,required_fps,worst_case_fps
+50,50,10.0,800.0
+50,500,100.0,800.0
+50,2000,400.0,800.0

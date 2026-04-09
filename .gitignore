@@ -4,4 +4,6 @@ __pycache__/
 *.pyo
 .ipynb_checkpoints/
 dvs_model_explained.py
+dvs_rv_explained.py
 Visual sensing final project running doc.pdf
+project docs and my work/

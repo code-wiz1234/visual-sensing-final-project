@@ -1,0 +1,27 @@
+time_s,velocity_px_s,background,power_mW,latency_ms,worst_case_fps,note
+0,10,low_texture,332.5936,1.92,800.0,CIS power constant
+1,50,low_texture,332.5936,1.92,800.0,CIS power constant
+2,100,low_texture,332.5936,1.92,800.0,CIS power constant
+3,200,low_texture,332.5936,1.92,800.0,CIS power constant
+4,500,low_texture,332.5936,1.92,800.0,CIS power constant
+5,1000,low_texture,332.5936,1.92,800.0,CIS power constant
+6,2000,low_texture,332.5936,1.92,800.0,CIS power constant
+7,1000,low_texture,332.5936,1.92,800.0,CIS power constant
+8,500,low_texture,332.5936,1.92,800.0,CIS power constant
+9,200,low_texture,332.5936,1.92,800.0,CIS power constant
+10,100,low_texture,332.5936,1.92,800.0,CIS power constant
+11,50,low_texture,332.5936,1.92,800.0,CIS power constant
+12,10,low_texture,332.5936,1.92,800.0,CIS power constant
+0,10,high_texture,359.9477,1.94,800.0,CIS power constant
+1,50,high_texture,359.9477,1.94,800.0,CIS power constant
+2,100,high_texture,359.9477,1.94,800.0,CIS power constant
+3,200,high_texture,359.9477,1.94,800.0,CIS power constant
+4,500,high_texture,359.9477,1.94,800.0,CIS power constant
+5,1000,high_texture,359.9477,1.94,800.0,CIS power constant
+6,2000,high_texture,359.9477,1.94,800.0,CIS power constant
+7,1000,high_texture,359.9477,1.94,800.0,CIS power constant
+8,500,high_texture,359.9477,1.94,800.0,CIS power constant
+9,200,high_texture,359.9477,1.94,800.0,CIS power constant
+10,100,high_texture,359.9477,1.94,800.0,CIS power constant
+11,50,high_texture,359.9477,1.94,800.0,CIS power constant
+12,10,high_texture,359.9477,1.94,800.0,CIS power constant
