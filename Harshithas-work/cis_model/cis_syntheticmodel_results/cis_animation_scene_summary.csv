@@ -1,0 +1,4 @@
+scene,background,object_size_px,velocity_px_s,required_fps,worst_case_fps,rows,cols,adc_bits_used,power_mW,latency_ms,snr_dB,dynamic_range_dB,total_noise_e,max_frame_rate_hz,feasible,fps_clipped,event_rate_ev_s
+animation,low_texture,50,50,10.0,800.0,480,640,8,332.5936,1.92,33.98,51.42,,178.91,0,1,19448.0
+animation,low_texture,50,500,100.0,800.0,480,640,8,332.5936,1.92,33.98,51.42,,178.91,0,1,194480.0
+animation,low_texture,50,2000,400.0,800.0,480,640,8,332.5936,1.92,33.98,51.42,,178.91,0,1,777920.0
